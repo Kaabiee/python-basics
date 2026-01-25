@@ -1,7 +1,7 @@
 import getpass
 
 def main():
-    print("hola, mundo")
+    print("hola, buenos dias")
     print("esto es una prueba de cisco")    
     print("para comenzar, ¿Cual es tu nombre?")
     nombre = input("nombre: ")
