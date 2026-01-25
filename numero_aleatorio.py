@@ -1,6 +1,5 @@
 import random
 
-
 print("hola, este es un juego de adivinar un numero aleatorio del 1 al 100.")
 respuesta = input("¿Quieres jugar?, contesta con si/no: ")
 
