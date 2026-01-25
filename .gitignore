@@ -1,1 +1,17 @@
+<<<<<<< HEAD
 .DS_Store
+=======
+__pycache__/
+*.py[cod]
+*.pyd
+.Python
+venv/
+.venv/
+env/
+.env/
+pip-wheel-metadata/
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+>>>>>>> b39ae10 (Initial commit)
