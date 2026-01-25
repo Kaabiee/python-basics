@@ -1,25 +1,42 @@
 print("Hola, bienvenido a la calculadora simple.")
-
-operacion = input("¿Qué operación quieres hacer? (+, -, *, /): ").strip()
-
-if operacion not in {"+", "-", "*", "/"}:
-    print("Tu símbolo es inválido.")
-    raise SystemExit(1)
-
-print("Ahora ingresa tus números")
-num1 = float(input("Primer número: "))
-num2 = float(input("Segundo número: "))
+operacion = input("¿Que operacion quieres hacer?, Ingresa tu respuesta con +, -, *,/ : ")
+print("Ahora ingresa tus numeros")
 
 if operacion == "+":
-    resultado = num1 + num2
-elif operacion == "-":
-    resultado = num1 - num2
-elif operacion == "*":
-    resultado = num1 * num2
-else:  # "/"
-    if num2 == 0:
-        print("No se puede dividir entre 0.")
-        raise SystemExit(1)
-    resultado = num1 / num2
+    print("Ahora ingresa tus numeros")
 
-print(f"Tu respuesta es: {resultado}")
+elif operacion == "-":
+    print("Ahora ingresa tus numeros")
+   
+elif operacion == "*":
+    print("Ahora ingresa tus numeros")
+   
+elif operacion == "/":
+    print("Ahora ingresa tus numeros")
+ 
+else:
+    print("Tu simbolo es invalido")
+
+num1 = float(input("Pirimer numero: "))
+num2 = float(input("Segundo numero: "))
+
+if operacion == "+":
+    suma = num1 + num2 
+    print(f"Tu respuesta es: {suma}")
+
+elif operacion == "-":
+    rest = num1 - num2
+    print(f"Tu respuesta es: {rest}")
+
+elif operacion == "*":
+    mult = num1 * num2
+    print(f"Tu respuesta es: {mult}")
+
+elif operacion == "/":
+    div = num1 / num2
+    print(f"Tu respuesta es: {div}")
+
+else:
+    print("Tu operacion es invalida.")
+    git config --global user.name "Carlos Chavez"
+git config --global user.email "caremi1u7@gmail.com"
