@@ -47,6 +47,7 @@ while True:
             edit = int(input("¿Que tarea quieres editar?, contesta con numeros 1,2,3,etc.: "))
             nombre_nuevo = input("Que nombre quieres poner?: ")
             tareas_t[edit - 1] = nombre_nuevo
+            print("Se le cambio el nombre a tu tarea.")
 
         else:
             print("Tu respuesta no es valida. ")
@@ -60,7 +61,7 @@ while True:
             print(tareas)
 
     elif objetivo == "7":
-        res2 = input("¿Quieres eliminar las tareas pendientes?, contesta con (si/no):")
+        res2 = input("¿Quieres eliminar las tareas terminadas?, contesta con (si/no):")
         
         if res2 == "si":
             tareas_t.clear()
@@ -80,4 +81,4 @@ while True:
 
     else:
         print("Tu seleccion es invalida")
-        exit()
+        continue
