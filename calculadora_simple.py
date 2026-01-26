@@ -38,5 +38,3 @@ elif operacion == "/":
 
 else:
     print("Tu operacion es invalida.")
-    git config --global user.name "Carlos Chavez"
-git config --global user.email "caremi1u7@gmail.com"
