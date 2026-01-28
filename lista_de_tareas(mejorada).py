@@ -114,7 +114,7 @@ def borrar_tareas_terminadas():
     while True:
         resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
         if resp3 == "si":
-            tareas_t.clear
+            tareas_t.clear()
             print("Tus tareas han sido eliminadas con exito. ")
             break
 
