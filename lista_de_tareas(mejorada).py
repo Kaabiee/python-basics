@@ -104,11 +104,11 @@ def editar_tarea():
 def numero_de_tareas():
     print("==== Tus tareas pendientes ====")
     for tarea in tareas.p:
-        print(tareas)
+        print(tarea)
         
     print ("==== Tus tareas terminadas son ====")
     for tarea in tareas_t:
-        print(tareas)
+        print(tarea)
 
 def borrar_tareas_terminadas():
     while True:
