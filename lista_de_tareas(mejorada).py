@@ -26,7 +26,7 @@ def agregar_tarea():
             print("Tu tarea ha sido agregada con exito. ")
             tareas_p.append(tarea)
             break
-
+        
 def ver_tareas_pendientes():
     print("Tus tareas pendientes son: ")
     for tarea in tareas_p:
