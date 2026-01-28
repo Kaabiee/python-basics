@@ -8,7 +8,7 @@ menu_texto = """
 2.-Ver tus tareas pendientes
 3.-Eliminar tareas pendientes
 4.-Marcar como terminadas
-s5.-Editar tareas
+5.-Editar tareas
 6.-Numero de tareas
 7.-Limpiar tareas terminadas
 8.-Salir
@@ -94,7 +94,7 @@ def editar_tarea():
                 print(f"{index + 1}. {tarea}")
             edit2 = int(input("¿Que tarea quieres editar?.\nContesta con numeros 1.2.3.4.etc.")) 
             nombre_nuevo = input("¿Cual es el nuevo nombre que deseas utilizar. a")
-            tareas_t.edit[edit2 - 1] = nombre_nuevo
+            tareas_t.[edit2 - 1] = nombre_nuevo
             break
 
         else:
@@ -103,18 +103,18 @@ def editar_tarea():
 
 def numero_de_tareas():
     print("==== Tus tareas pendientes ====")
-    for index, tareas in enumerate (tareas_p):
+    for tarea in tareas.p:
         print(tareas)
         
     print ("==== Tus tareas terminadas son ====")
-    for index, tareas in enumerate (tareas_t):
+    for tarea in tareas_t:
         print(tareas)
 
 def borrar_tareas_terminadas():
-    resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
     while True:
+    resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
         if resp3 == "si":
-            tareas_t.remove
+            tareas_t.remove()
             print("Tus tareas han sido eliminadas con exito. ")
             break
 
@@ -160,7 +160,7 @@ while True:
         numero_de_tareas()        
 
     elif opciones == 7:
-        eliminar_tareas_p()
+        borrar_tareas_terminadas()
 
     elif opciones == 8:
         salir()        
