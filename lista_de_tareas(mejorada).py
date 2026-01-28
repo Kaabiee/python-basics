@@ -94,7 +94,7 @@ def editar_tarea():
                 print(f"{index + 1}. {tarea}")
             edit2 = int(input("¿Que tarea quieres editar?.\nContesta con numeros 1.2.3.4.etc.")) 
             nombre_nuevo = input("¿Cual es el nuevo nombre que deseas utilizar. a")
-            tareas_t.[edit2 - 1] = nombre_nuevo
+            tareas_t[edit2 - 1] = nombre_nuevo
             break
 
         else:
@@ -103,7 +103,7 @@ def editar_tarea():
 
 def numero_de_tareas():
     print("==== Tus tareas pendientes ====")
-    for tarea in tareas.p:
+    for tarea in tareas_p:
         print(tarea)
         
     print ("==== Tus tareas terminadas son ====")
@@ -112,9 +112,9 @@ def numero_de_tareas():
 
 def borrar_tareas_terminadas():
     while True:
-    resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
+        resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
         if resp3 == "si":
-            tareas_t.remove()
+            tareas_t.clear
             print("Tus tareas han sido eliminadas con exito. ")
             break
 
