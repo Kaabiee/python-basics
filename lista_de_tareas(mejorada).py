@@ -3,6 +3,7 @@ print("!Hola¡, Bienvenido/a a tu lista de tareas. ")
 tareas_p = []
 tareas_t = []
 
+
 menu_texto = """
 1.-Agregar una tarea
 2.-Ver tus tareas pendientes
@@ -13,6 +14,38 @@ menu_texto = """
 7.-Limpiar tareas terminadas
 8.-Salir
 """
+
+def guardar_tareas():
+    with open("tareas.txt", "w") as archivo:  # W = modo de escritura      with = cierra el archivo automaticamente
+        archivo.write("PENDIENTES\n")
+        for tarea in tareas_p:
+            archivo.write(tarea + "\n")
+
+        archivo.write("TERMINADAS\n")
+        for tarea in tareas_t:
+            archivo.write(tarea + "\n")
+
+def cargar_tareas():
+    try:
+        with open("tareas.txt", "r") as archivo:  # R = modo lectura 
+            lineas = archivo.readlines()           # readlines = lee todas las lineas y pone en una lista 
+
+            lista_actual = None 
+
+            for linea in lineas:
+                linea = linea.strip()             # strip() = quita los \n y los espacios
+
+                if linea == "PENDIENTES":
+                    lista_actual = tareas_p
+
+                elif linea == "TERMINADAS":
+                    lista_actual = tareas_t
+
+                elif linea != "":   #Si no esta vacia 
+                    lista_actual.append(linea)
+
+    except FileNotFoundError: #Si el archivo no existe 
+        pass
 
 # las definiciones me ayudan a poder reutilizarlas en el futuro
 def agregar_tarea():
@@ -25,6 +58,7 @@ def agregar_tarea():
         else:
             print("Tu tarea ha sido agregada con exito. ")
             tareas_p.append(tarea)
+            guardar_tareas()
             break
         
 def ver_tareas_pendientes():
@@ -38,6 +72,7 @@ def eliminar_tareas_p():
             eli = input("Nombre de la tarea que deseas eliminar: ")
             if eli in tareas_p:
                 tareas_p.remove(eli)
+                guardar_tareas()
                 print("Tu tarea a sido eliminada con exito. ")
                 break
 
@@ -63,6 +98,7 @@ def marcar_terminada():
             if ter in tareas_p:
                 tareas_p.remove(ter)
                 tareas_t.append(ter)
+                guardar_tareas()
                 print("Tu tarea a sido marcada como terminada. ")
                 break
 
@@ -85,6 +121,7 @@ def editar_tarea():
             edit = int(input("¿que tarea quieres editar?.\nContesta con numeros 1.2.3.4.etc."))
             nombre_nuevo = input("¿Cual es el nuevo nombre que deseas utilizar?. ")
             tareas_p[edit - 1] = nombre_nuevo
+            guardar_tareas()
             break
 
         elif res == "terminada":
@@ -95,6 +132,7 @@ def editar_tarea():
             edit2 = int(input("¿Que tarea quieres editar?.\nContesta con numeros 1.2.3.4.etc.")) 
             nombre_nuevo = input("¿Cual es el nuevo nombre que deseas utilizar. a")
             tareas_t[edit2 - 1] = nombre_nuevo
+            guardar_tareas()
             break
 
         else:
@@ -103,18 +141,27 @@ def editar_tarea():
 
 def numero_de_tareas():
     print("==== Tus tareas pendientes ====")
-    for tarea in tareas_p:
-        print(tarea)
-        
+    if  tareas_p:
+        for tarea in tareas_p:
+            print(tarea)
+
+    else:
+        print("No tienes tareas Pentientes. ")
+
     print ("==== Tus tareas terminadas son ====")
-    for tarea in tareas_t:
-        print(tarea)
+    if tareas_t:
+        for tarea in tareas_t:
+            print(tarea)
+
+    else:
+        print("No tienes tareas Terminadas. ")
 
 def borrar_tareas_terminadas():
     while True:
-        resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no);")
+        resp3 = input("Estas seguro de que quieres eliminar las tareas terminadas?.\n Contesta con un (si/no); ")
         if resp3 == "si":
             tareas_t.clear()
+            guardar_tareas()
             print("Tus tareas han sido eliminadas con exito. ")
             break
 
@@ -129,6 +176,8 @@ def borrar_tareas_terminadas():
 def salir():
     print("!Que tengas un buen dia¡, hasta luego.")
     exit()
+
+cargar_tareas()
 
 while True:
     try:
