@@ -11,7 +11,7 @@ _1 = {
 _2 = {
     "pregunta": "¿Cuál es el elemento químico representado por el símbolo Au?",
     "opciones": ["Plata", "Oro", "Aluminio"],
-    "respuesta_corecta": "Oro"
+    "respuesta_correcta": "Oro"
 }
 
 _3 = {
