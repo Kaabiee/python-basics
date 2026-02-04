@@ -27,16 +27,13 @@ def cargar_operaciones():
         with open("operaciones.txt", "r") as archivo:
             lineas = archivo.readlines()
 
-            lista_actual = None
-
             for linea in lineas:
                 linea = linea.strip()
 
-                if linea == "OPERACIONES":
-                    lista_actual = resultados
+                if linea == "OPERACIONES" or linea == "":
+                    continue
 
-                elif linea != "":
-                    lista_actual.append(linea)
+                resultados.append(linea)
 
     except FileNotFoundError:
         pass
@@ -152,7 +149,7 @@ while True:
 
             if resp1 == "no":
                 print("Okey, tu historial no sera borrado. ")
-                break
+                continue
             
             elif resp1 == "si":
                 print("Tu historial ha sido borrado con exito. ")
@@ -166,7 +163,7 @@ while True:
 
             if resp1 == "no":
                 print("Okey, Entonces no vas a regresar al menu. ")
-                break
+                continue
 
             elif resp1 == "si":
                 print("¡Hasta luego!, que tengas un buen dia. ")
