@@ -35,7 +35,6 @@ def generador_de_contraseña():
     print(f"=== Tu contraseña ===\n{contraseña()}")
 
 def verificador_contraseña(tc):
-    tc.split()
     hay_numero = any(c.isdigit() for c in tc)
     hay_letra = any(c.isalpha() for c in tc)
 
@@ -88,7 +87,7 @@ while True:
         elif r == 3:
             numerodc = int(input("¿Cuantas contraseñas quieres generar?\nSolo se pueden generar 10 y tu respuesta tiene que ser con numeros.\nRespuesta: "))
 
-            if numerodc < 1 or r > 10:
+            if numerodc < 1 or numerodc > 10:
                 print("Tu numero no es valido. ")
                 continue
 
